@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheussarmento <matheussarmento@studen    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 18:54:01 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/25 15:08:40 by matheussarm      ###   ########.fr       */
+/*   Created: 2023/07/25 16:47:45 by msarment          #+#    #+#             */
+/*   Updated: 2023/07/25 16:53:26 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_isalpha(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	if ((c >= 'A' && c <= 'Z' ) || (c >= 'a' && c <= 'z' ))
+		return (1024);
 	return (0);
-}
-
-int	main(void)
-{
-	printf("%i\n", isascii(3));
-	printf("%i\n", ft_isascii(3));
 }

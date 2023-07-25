@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheussarmento <matheussarmento@studen    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 18:47:23 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/25 14:34:15 by matheussarm      ###   ########.fr       */
+/*   Created: 2023/07/25 16:49:40 by msarment          #+#    #+#             */
+/*   Updated: 2023/07/25 16:51:07 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+size_t	ft_strlen(const char *s)
 {
-	if (c >= '0' && c <= '9')
-		return (2048);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
 int	main(void)
 {
-	printf("%i\n", isdigit('9'));
-	printf("%i\n", ft_isdigit('9'));
+	printf("%li\n", strlen("adwda wdwa \0 dwa dwad\0 dwa \a dwadaw d"));
+	printf("%li\n", ft_strlen("adwda wdwa \0 dwa dwad\0 dwa \a dwadaw d"));
 }
