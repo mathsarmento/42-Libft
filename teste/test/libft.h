@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheussarmento <matheussarmento@studen    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:49:49 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/27 14:51:24 by matheussarm      ###   ########.fr       */
+/*   Updated: 2023/07/25 16:49:51 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
