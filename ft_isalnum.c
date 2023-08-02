@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matheussarmento <matheussarmento@studen    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 18:50:04 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/25 15:08:38 by matheussarm      ###   ########.fr       */
+/*   Updated: 2023/08/02 11:42:08 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
