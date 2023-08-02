@@ -1,13 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 18:54:01 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/27 18:54:03 by msarment         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
+
+// char	*ft_strtrim(char const *s1, char const *set)
+// {
+// 	// size_t	i;
+// 	// size_t	j;
+// 	// char	*str;
+
+// 	// i = 0;
+// 	// j = 0;
+// 	// if (s1[i])
+// 	// 	return (NULL);
+// 	// str = calloc(ft_strlen (s1), sizeof(char));
+// 	// while (s1[i])
+// 	// {
+// 	// 	while (s1[i] == set[j])
+// 	// 	{
+			
+// 	// 	}
+// 	// }
+// 	return (NULL);
+// }

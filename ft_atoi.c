@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/* int	ft_putnbr(const char *nptr, int size);
+static int	ft_putnbr(const char *nptr, int size);
 
 int	ft_atoi(const char *nptr)
 {
@@ -24,7 +24,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	while (nptr[i])
 	{
-		if (nptr[i] == '+' || nptr[i] == '-' || nptr[i] >= '0' \
+		if ((nptr[i] == '+' || nptr[i] == '-' || nptr[i] >= '0') \
 		&& nptr[i] <= '9')
 		{
 			if (nptr[i] == '-')
@@ -43,7 +43,7 @@ int	ft_atoi(const char *nptr)
 	return (nbr);
 }
 
-int	ft_putnbr(const char *nptr, int i)
+static int	ft_putnbr(const char *nptr, int i)
 {
 	int	result;
 
@@ -54,4 +54,4 @@ int	ft_putnbr(const char *nptr, int i)
 		i++;
 	}
 	return (result);
-} */
+}
