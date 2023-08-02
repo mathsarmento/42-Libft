@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:35:11 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/27 18:35:12 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/02 20:14:22 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!len)
-		return (NULL);
-	sub = malloc (len * sizeof(char));
+	sub = ft_calloc (len, sizeof(char));
+	if (!sub)
+		return (sub);
 	while (i != len)
 	{
 		sub[i] = s[start];

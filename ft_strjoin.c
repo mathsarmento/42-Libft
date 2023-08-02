@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:33:17 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/27 18:33:33 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:45:29 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	len = ft_strlen (s1) + ft_strlen (s2);
-	if (!len)
-		return (NULL);
 	str = malloc(len * sizeof(char) + 1);
 	while (s1[i])
 	{

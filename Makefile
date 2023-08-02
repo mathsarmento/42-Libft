@@ -22,17 +22,28 @@ B_OBJS = $(BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-    ar -rcs $(NAME) $(OBJECTS)
+$(NAME): $(OBJS)
 
 bonus: $(B_OBJS)
 
 clean:
 	$(REMOVE) $(OBJS) $(B_OBJS)
 
+%.o: %.c
+	gcc -c $(FLAGS) $< -o $@
+	ar -rcs $(NAME) $@
+
 fclean: clean
 		$(REMOVE) $(NAME)
 
 re: fclean all
 
-.PHONY: re fclean clean all bonus $(NAME)
+git: fclean
+	git status
+	echo "Commiting in 5 seconds"
+	sleep 5
+	git add *.c *.h Makefile
+	git commit -m "Automatic commit from Makefile"
+	git push
+
+.PHONY: re fclean clean all bonus $(NAME) git
