@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:30:16 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/27 18:30:35 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/02 21:15:02 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (*(const char *)(s1 + i) != *(const char *)(s2 + i))
-			return ((*(const char *)(s1 + i)) - (*(const char *)(s2 + i)));
+			return ((*(const char *)(s2 + i)) - (*(const char *)(s1 + i)));
 		i++;
 	}
 	return (0);

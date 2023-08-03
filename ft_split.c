@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:17:56 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/02 13:17:57 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/02 21:53:20 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	tab = (char **) ft_calloc (divwords(s, c), sizeof(char *));
+	tab = (char **) ft_calloc (divwords(s, c) + 1, sizeof(char *));
 	if (!tab || !s)
 		return (NULL);
 	save = 0;
@@ -32,16 +32,14 @@ char	**ft_split(char const *s, char c)
 		if (s[i] == c)
 		{
 			if (i - save != 0)
-			{
-				tab[j] = ft_substr(s, save, (i - save));
-				j++;
-			}
+				tab[j++] = ft_substr(s, save, (i - save));
 			save = i + 1;
 		}
 		i++;
 	}
 	if (s[i] != c)
-		tab[j] = ft_substr(s, save, (i - save));
+		tab[j++] = ft_substr(s, save, (i - save));
+	tab[j] = NULL;
 	return (tab);
 }
 
@@ -56,7 +54,7 @@ static int	divwords(char const *s, char c)
 		words = 0;
 	while (s[i])
 	{
-		if ((s[i] == c && s[i + 1] != '\0' && s[i + 1] != c ))
+		if ((s[i] == c && s[i + 1] != '\0' && s[i + 1] != c))
 			words++;
 		i++;
 	}
