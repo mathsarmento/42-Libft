@@ -37,9 +37,8 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	if (s[i] != c)
-		tab[j++] = ft_substr(s, save, (i - save));
-	tab[j] = NULL;
+	if (s[i] != c && save != i)
+		tab[j] = ft_substr(s, save, (i - save));
 	return (tab);
 }
 
@@ -60,3 +59,20 @@ static int	divwords(char const *s, char c)
 	}
 	return (words);
 }
+
+// int	main(void)
+// {
+// 	ft_split("  tripouille  42  ", ' ');
+// }
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	**tab = ft_split("aaa b aaaa b aaa", 'b');
+// 	printf("%s\n", tab[0]);
+// 	printf("%s\n", tab[1]);
+// 	printf("%s\n", tab[2]);
+// 	printf("%s\n", tab[3]);
+// 	printf("%i\n", divwords("aaa b aaaa b aaa", 'b'));
+// 	free(tab);
+// }

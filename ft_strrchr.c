@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*pointer;
 	int		i;
 
+	if (c > 255)
+		return ((char *) s);
 	i = 0;
 	pointer = NULL;
 	while (s[i])
@@ -25,5 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 			pointer = (char *)(s + i);
 		i++;
 	}
+	if (s[i] == c)
+			pointer = (char *)(s + i);
 	return (pointer);
 }

@@ -13,6 +13,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
+
 # include <unistd.h>
 # include <stdlib.h>
 
