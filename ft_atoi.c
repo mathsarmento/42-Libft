@@ -44,12 +44,21 @@ static int	check_limit(int nbr, int next, int neg)
 {
 	if (neg > 0)
 	{
+<<<<<<< HEAD
 		if (nbr > (2147483647 - next) / 10)
 			return (1);
 	}
 	else
 	{
 		if (-nbr < (-2147483648 + next) / 10)
+=======
+		if (nbr > (MAX_INT - next) / 10)
+			return (1);
+	}
+	else 
+	{
+		if (-nbr < (MIN_INT + next) / 10)
+>>>>>>> c7fac63f0dc80de20b3cc6ef64948a2c3f475a19
 			return (1);
 	}
 	return (0);

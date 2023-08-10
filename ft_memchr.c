@@ -19,7 +19,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	pointer = NULL;
-	c = c % 256;
+		if (c > 255)
+		return ((char *) s);
 	while (i < n)
 	{
 		if (*(const char *)(s + i) == c)
