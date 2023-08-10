@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:30:45 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/02 17:38:24 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/09 17:27:54 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!ft_isascii(c))
-		return ((char *) s);
+	c = c % 128;
 	while (*s)
 	{
 		if (*s == c)

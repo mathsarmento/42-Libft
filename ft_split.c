@@ -6,13 +6,13 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:17:56 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/02 21:53:20 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/10 19:43:39 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int divwords(char const *s, char c);
+static int	divwords(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -23,9 +23,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	tab = (char **) ft_calloc (divwords(s, c) + 1, sizeof(char *));
-	if (!tab || !s)
-		return (NULL);
+	tab = (char **) malloc (divwords(s, c) * sizeof(char *));
 	save = 0;
 	while (s[i])
 	{
@@ -39,7 +37,6 @@ char	**ft_split(char const *s, char c)
 	}
 	if (s[i] != c)
 		tab[j++] = ft_substr(s, save, (i - save));
-	tab[j] = NULL;
 	return (tab);
 }
 
@@ -59,4 +56,17 @@ static int	divwords(char const *s, char c)
 		i++;
 	}
 	return (words);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char **tab = ft_split("", 'z');
+	if (!tab)
+		printf("EXISTE TAB \n");
+	else
+		printf("NÃO EXISTE TAB\n");
+	printf("%s\n", tab[0]);
+	printf("%i\n", divwords("", 'z'));
 }

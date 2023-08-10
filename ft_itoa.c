@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:42:36 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/02 20:05:05 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/10 17:52:18 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_itoa(int n)
 	char	*intc;
 
 	intc = ft_calloc(nbrlen(n) + 1, sizeof(char));
+	if (!intc)
+		return (NULL);
 	fillchar(intc, n, nbrlen(n));
 	return (intc);
 }

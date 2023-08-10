@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:35:11 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/02 20:44:16 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/10 17:49:49 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		size = len + 1;
 	sub = malloc(size);
-	if (!size)
+	if (!sub)
 		return (NULL);
 	i = 0;
 	while (((i + start) < strlen) && (i < len))

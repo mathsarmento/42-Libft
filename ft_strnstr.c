@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:53:52 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/27 18:53:54 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:13:55 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 
-	if (!haystack)
+	if (!haystack && !needle)
 		return (NULL);
 	if (!*needle)
 		return ((char *)haystack);
