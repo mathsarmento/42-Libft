@@ -35,13 +35,8 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-<<<<<<< HEAD
-	if (s[i] != c)
-		tab[j++] = ft_substr(s, save, (i - save));
-=======
 	if (s[i] != c && save != i)
 		tab[j] = ft_substr(s, save, (i - save));
->>>>>>> c7fac63f0dc80de20b3cc6ef64948a2c3f475a19
 	return (tab);
 }
 
@@ -63,20 +58,6 @@ static int	divwords(char const *s, char c)
 	return (words);
 }
 
-<<<<<<< HEAD
-#include <stdio.h>
-
-int	main(void)
-{
-	char **tab = ft_split("", 'z');
-	if (!tab)
-		printf("EXISTE TAB \n");
-	else
-		printf("NÃO EXISTE TAB\n");
-	printf("%s\n", tab[0]);
-	printf("%i\n", divwords("", 'z'));
-}
-=======
 // int	main(void)
 // {
 // 	ft_split("  tripouille  42  ", ' ');
@@ -93,4 +74,3 @@ int	main(void)
 // 	printf("%i\n", divwords("aaa b aaaa b aaa", 'b'));
 // 	free(tab);
 // }
->>>>>>> c7fac63f0dc80de20b3cc6ef64948a2c3f475a19
