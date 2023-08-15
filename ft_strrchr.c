@@ -17,12 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*pointer;
 	int		i;
 
-<<<<<<< HEAD
 	c = c % 128;
-=======
-	if (c > 255)
-		return ((char *) s);
->>>>>>> c7fac63f0dc80de20b3cc6ef64948a2c3f475a19
 	i = 0;
 	pointer = NULL;
 	while (s[i])
