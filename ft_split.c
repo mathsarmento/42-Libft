@@ -6,23 +6,36 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:17:56 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/10 19:43:39 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/16 19:51:09 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static int	count_words(char const *str, char delim);
+static int	copystr(char **tab, size_t i, size_t size, char const *s);
+static int	filltab(char **tab, char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	size;
 	char	**tab;
+	int		count;
 
-	tab = (char **) ft_calloc (count_words(s, c) + 1, sizeof(char *));
+	count = count_words(s, c) + 1;
+	tab = (char **) malloc (count * sizeof(char *));
 	if (!tab || !s)
 		return (NULL);
+	if (!filltab(tab, s, c))
+		return (NULL);
+	*tab + count - 1 = NULL;
+	return (tab);
+}
+
+static int	filltab(char **tab, char const *s, char c)
+{
+	size_t	i;
+	size_t	size;
+
 	i = 0;
 	size = 0;
 	while (*s)
@@ -31,7 +44,8 @@ char	**ft_split(char const *s, char c)
 			size++;
 		if (*s == c && size > 0)
 		{
-			tab[i] = ft_substr((s - size), 0, size);
+			if (copystr(tab, i, size, s))
+				return (0);
 			i++;
 			size = 0;
 		}
@@ -39,7 +53,23 @@ char	**ft_split(char const *s, char c)
 	}
 	if (size > 0)
 		tab[i] = ft_substr((s - size), 0, size);
-	return (tab);
+	return (1);
+}
+
+static int	copystr(char **tab, size_t i, size_t size, char const *s)
+{
+	tab[i] = ft_substr((s - size), 0, size);
+	if (!tab[i])
+	{
+		while (i != 0)
+		{
+			free(tab[i]);
+			i--;
+		}
+		free(tab);
+		return (1);
+	}
+	return (0);
 }
 
 static int	count_words(char const *str, char delim)
@@ -63,19 +93,12 @@ static int	count_words(char const *str, char delim)
 	return (count);
 }
 
-// int	main(void)
-// {
-// 	ft_split("  tripouille  42  ", ' ');
-// }
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main(void)
-// {
-// 	char	**tab = ft_split("aaa b aaaa b aaa", 'b');
-// 	printf("%s\n", tab[0]);
-// 	printf("%s\n", tab[1]);
-// 	printf("%s\n", tab[2]);
-// 	printf("%s\n", tab[3]);
-// 	printf("%i\n", divwords("aaa b aaaa b aaa", 'b'));
-// 	free(tab);
-// }
+int	main(void)
+{
+	char **tab = ft_split("hello!", ' ');
+	printf("%i\n", count_words("hello!", ' '));
+	printf("%p\n", tab[0]);
+	printf("%p\n", tab[1]);
+}

@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:17:34 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/02 11:37:09 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/16 17:59:11 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 

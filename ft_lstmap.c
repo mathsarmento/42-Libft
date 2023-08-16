@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:46:25 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/10 18:28:01 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/16 18:09:54 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newlst;
 	t_list	*newnode;
+	void	*delete;
 
 	newlst = NULL;
 	while (lst)
 	{
-		newnode = ft_lstnew((f)(lst->content));
+		delete = (f)(lst->content);
+		newnode = ft_lstnew(delete);
 		if (!newnode)
 		{
+			(*del)(delete);
 			ft_lstclear(&newlst, del);
 			return (NULL);
 		}

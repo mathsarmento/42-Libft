@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:07:06 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/27 19:08:33 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/16 17:57:34 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[i + j] = src[j];
 		j++;
 	}
-	if (i < size)	
+	if (i < size)
 		dst[i + j] = '\0';
 	return (i + ft_strlen(src));
 }

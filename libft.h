@@ -6,15 +6,12 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:49:49 by msarment          #+#    #+#             */
-/*   Updated: 2023/07/25 16:49:51 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/16 17:58:33 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# define MAX_INT 2147483647
-# define MIN_INT -2147483648
 
 # include <unistd.h>
 # include <stdlib.h>

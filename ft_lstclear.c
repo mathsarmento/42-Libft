@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:54:27 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/02 12:05:38 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/16 17:54:42 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	{
 		n_next = (*lst)->next;
 		ft_lstdelone(*lst, del);
-		*lst = n_next; 
+		*lst = n_next;
 	}
 	*lst = NULL;
 }
