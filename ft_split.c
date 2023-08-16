@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:17:56 by msarment          #+#    #+#             */
-/*   Updated: 2023/08/16 19:51:09 by msarment         ###   ########.fr       */
+/*   Updated: 2023/08/16 19:55:40 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (!filltab(tab, s, c))
 		return (NULL);
-	*tab + count - 1 = NULL;
+	tab[count - 1] = 0;
 	return (tab);
 }
 
@@ -93,12 +93,12 @@ static int	count_words(char const *str, char delim)
 	return (count);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char **tab = ft_split("hello!", ' ');
-	printf("%i\n", count_words("hello!", ' '));
-	printf("%p\n", tab[0]);
-	printf("%p\n", tab[1]);
-}
+// int	main(void)
+// {
+// 	char **tab = ft_split("hello!", ' ');
+// 	printf("%i\n", count_words("hello!", ' '));
+// 	printf("%p\n", tab[0]);
+// 	printf("%p\n", tab[1]);
+// }
