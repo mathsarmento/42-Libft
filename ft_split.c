@@ -12,50 +12,55 @@
 
 #include "libft.h"
 
-static int	divwords(char const *s, char c);
+static int	count_words(char const *str, char delim);
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	i;
+	size_t	size;
 	char	**tab;
-	int		i;
-	int		save;
-	int		j;
 
+	tab = (char **) ft_calloc (count_words(s, c) + 1, sizeof(char *));
+	if (!tab || !s)
+		return (NULL);
 	i = 0;
-	j = 0;
-	tab = (char **) malloc (divwords(s, c) * sizeof(char *));
-	save = 0;
-	while (s[i])
+	size = 0;
+	while (*s)
 	{
-		if (s[i] == c)
+		if (*s != c)
+			size++;
+		if (*s == c && size > 0)
 		{
-			if (i - save != 0)
-				tab[j++] = ft_substr(s, save, (i - save));
-			save = i + 1;
+			tab[i] = ft_substr((s - size), 0, size);
+			i++;
+			size = 0;
 		}
-		i++;
+		s++;
 	}
-	if (s[i] != c && save != i)
-		tab[j] = ft_substr(s, save, (i - save));
+	if (size > 0)
+		tab[i] = ft_substr((s - size), 0, size);
 	return (tab);
 }
 
-static int	divwords(char const *s, char c)
+static int	count_words(char const *str, char delim)
 {
-	int	i;
-	int	words;
+	int	count;
+	int	new;
 
-	i = 0;
-	words = 1;
-	if (s[i] == c)
-		words = 0;
-	while (s[i])
+	count = 0;
+	new = 1;
+	while (*str)
 	{
-		if ((s[i] == c && s[i + 1] != '\0' && s[i + 1] != c))
-			words++;
-		i++;
+		if (*str != delim && new == 1)
+		{
+			count++;
+			new = 0;
+		}
+		if (*str == delim)
+			new = 1;
+		str++;
 	}
-	return (words);
+	return (count);
 }
 
 // int	main(void)
