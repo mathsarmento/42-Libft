@@ -27,6 +27,6 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == c)
-			pointer = (char *)(s + i);
+		pointer = (char *)(s + i);
 	return (pointer);
 }
